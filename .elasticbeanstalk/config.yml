@@ -1,11 +1,11 @@
 branch-defaults:
-  default:
-    environment: image-filter-starter-code-bong011-dev
+  development:
+    environment: image-filter-bong011-dev
     group_suffix: null
 global:
-  application_name: image-filter-starter-code-bong011
+  application_name: image-filter-bong011
   branch: null
-  default_ec2_keyname: goetz
+  default_ec2_keyname: Ireland-goetz
   default_platform: Node.js 12 running on 64bit Amazon Linux 2
   default_region: eu-west-1
   include_git_submodules: true
@@ -14,6 +14,5 @@ global:
   platform_version: null
   profile: null
   repository: null
-  sc: null
+  sc: git
   workspace_type: Application
-

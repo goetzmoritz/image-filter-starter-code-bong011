@@ -51,8 +51,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
       fs.readFile(file, function(err, data) {
         if (err) 
           {
-            res.json({"message": "Invalid Image"})
-            res.status(422)
+            res.sendStatus(415) // 415 Unsupported Media Type
           };
         res.set("Content-Type", "image/jpeg")
         res.status(200).end(data, 'binary')
@@ -60,8 +59,8 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
     });
     }
     else {
-      res.json({"message": "Invalid Parameter"})
-      res.status(422)
+      //res.json({"message": "Invalid Parameter"})
+      res.sendStatus(406)  // 406 Not Acceptable fits best imho
       
     }
   });
