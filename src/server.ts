@@ -51,16 +51,18 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
       fs.readFile(file, function(err, data) {
         if (err) 
           {
-            res.send(err)
-            return err
+            res.json({"message": "Invalid Image"})
+            res.status(422)
           };
         res.set("Content-Type", "image/jpeg")
         res.status(200).end(data, 'binary')
-        deleteLocalFiles([file])  // I don't change the given function but it requires an array
+        deleteLocalFiles([file])  // I don't change the given function, it requires an array
     });
     }
     else {
+      res.json({"message": "Invalid Parameter"})
       res.status(422)
+      
     }
   });
 
