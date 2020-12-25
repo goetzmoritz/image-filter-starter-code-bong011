@@ -32,19 +32,18 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
   // Globals
   // only accepts images from https-source
-  var expressionjpg = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i
-  var regex = new RegExp(expressionjpg);
+  let regex: RegExp =  /(https?:\/\/.*\.(?:png|jpg|jpeg))/i
 
   //! END @TODO1
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get("/", async (req, res) => {
+  app.get("/", async (req:express.Request, res:express.Response) => {
     res.send("try GET /filteredimage?image_url={{}}")
   });
 
   // Filter the image and send it back.
-  app.get("/filteredimage", async (req, res) => {
+  app.get( "/filteredimage/", async (req:express.Request, res:express.Response) => {
     // Test the incoming data to fit a proper website
     if (req.query.image_url.match(regex)) {
       var file = await filterImageFromURL(req.query.image_url)
