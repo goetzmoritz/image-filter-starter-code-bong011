@@ -2,6 +2,8 @@ branch-defaults:
   default:
     environment: image-filter-starter-code-bong011-dev
     group_suffix: null
+  main:
+    environment: image-filter-starter-code-bong011-dev
 global:
   application_name: image-filter-starter-code-bong011
   branch: null
@@ -16,4 +18,3 @@ global:
   repository: null
   sc: null
   workspace_type: Application
-
