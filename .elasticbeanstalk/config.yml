@@ -1,11 +1,11 @@
 branch-defaults:
   default:
-    environment: image-filter-starter-code-bong011-dev
+    environment: image-filter-starter-code-dev
     group_suffix: null
   main:
-    environment: image-filter-starter-code-bong011-dev
+    environment: image-filter-starter-code-dev
 global:
-  application_name: image-filter-starter-code-bong011
+  application_name: image-filter-starter-code
   branch: null
   default_ec2_keyname: goetz
   default_platform: Node.js 12 running on 64bit Amazon Linux 2
